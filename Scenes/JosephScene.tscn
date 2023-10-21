@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://7ee4dc8cho6d"]
+[gd_scene load_steps=3 format=3 uid="uid://7ee4dc8cho6d"]
 
 [ext_resource type="PackedScene" uid="uid://dkfsanmnshrua" path="res://Assets/Prefabs/ConveyerBelt.tscn" id="1_eh448"]
+[ext_resource type="Script" path="res://Scripts/CameraUtils/ScreenShake.cs" id="2_kgbul"]
 
 [node name="JosephScene" type="Node2D"]
 
 [node name="Conveyer" parent="." instance=ExtResource("1_eh448")]
-position = Vector2(527, 601)
+position = Vector2(0, 271)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_kgbul")
+decay = 0.1
+maxOffset = Vector2(1, 1)
+maxRoll = 1.0
+traumaPower = 2.0

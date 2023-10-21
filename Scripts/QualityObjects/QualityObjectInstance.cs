@@ -23,6 +23,8 @@ public partial class QualityObjectInstance : PathFollow2D {
 			// Apply Effect
 			data?.OnReachedEnd(this);
 
+			if (!data.IsQuality) ScreenShake.instance?.AddTrauma(1);
+
 			QueueFree();
 		}
 

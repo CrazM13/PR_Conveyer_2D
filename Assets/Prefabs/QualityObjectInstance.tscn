@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwku4pk1d31ii"]
+[gd_scene load_steps=6 format=3 uid="uid://cwku4pk1d31ii"]
 
 [ext_resource type="Script" path="res://Scripts/QualityObjects/QualityObjectInstance.cs" id="1_5xpiu"]
 [ext_resource type="Texture2D" uid="uid://bqxvij7wq826f" path="res://Assets/Sprites/Placeholders/GoodPLACEHOLDER.png" id="2_ys66t"]
 [ext_resource type="Script" path="res://Scripts/Input/ClickableArea.cs" id="3_5p4bt"]
+[ext_resource type="Script" path="res://Scripts/Input/HoverReactionController.cs" id="3_xfcg3"]
 [ext_resource type="Shape2D" uid="uid://b534kcvy7nq38" path="res://Assets/CollisionShapes/ClickableAreaShape.tres" id="4_pyvu2"]
 
 [node name="QualityObjectInstance" type="PathFollow2D" node_paths=PackedStringArray("sprite")]
@@ -15,6 +16,7 @@ sprite = NodePath("Sprite2D")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 texture = ExtResource("2_ys66t")
+script = ExtResource("3_xfcg3")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_5p4bt")
@@ -27,3 +29,5 @@ wait_time = 0.2
 one_shot = true
 
 [connection signal="OnClick" from="Area2D" to="." method="OnClick"]
+[connection signal="mouse_entered" from="Area2D" to="Sprite2D" method="OnMouseEnter"]
+[connection signal="mouse_exited" from="Area2D" to="Sprite2D" method="OnMouseExit"]

@@ -10,5 +10,7 @@ public partial class ClickableArea : Area2D {
 		if (Input.IsActionJustPressed("mouse_left")) {
 			EmitSignal(SignalName.OnClick);
 		}
+
+		base._InputEvent(viewport, @event, shapeIdx);
 	}
 }
