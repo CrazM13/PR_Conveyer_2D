@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ck18rhg8hrowo"]
+
+[ext_resource type="Texture2D" uid="uid://db1umcs6bxoxp" path="res://Assets/Sprites/Placeholders/BadPLACEHOLDER.png" id="1_73iq8"]
+[ext_resource type="Script" path="res://Scripts/QualityObjects/QualityObjectData.cs" id="2_o5bos"]
+
+[resource]
+script = ExtResource("2_o5bos")
+Sprite = ExtResource("1_73iq8")
+IsQuality = false

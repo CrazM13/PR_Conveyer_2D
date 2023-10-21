@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://rmrtq1redece"]
+
+[ext_resource type="Texture2D" uid="uid://bqxvij7wq826f" path="res://Assets/Sprites/Placeholders/GoodPLACEHOLDER.png" id="1_1qtbk"]
+[ext_resource type="Script" path="res://Scripts/QualityObjects/QualityObjectData.cs" id="2_mjct6"]
+
+[resource]
+script = ExtResource("2_mjct6")
+Sprite = ExtResource("1_1qtbk")
+IsQuality = true

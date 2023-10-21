@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkfsanmnshrua"]
+
+[ext_resource type="Script" path="res://Scripts/ConveyerController.cs" id="1_yvbmm"]
+[ext_resource type="Resource" uid="uid://rmrtq1redece" path="res://Data/TestGoodObject.tres" id="2_54b5u"]
+[ext_resource type="PackedScene" uid="uid://cwku4pk1d31ii" path="res://Assets/Prefabs/QualityObjectInstance.tscn" id="3_d64hd"]
+[ext_resource type="Resource" uid="uid://ck18rhg8hrowo" path="res://Data/TestBadObject.tres" id="3_i53ou"]
+[ext_resource type="Texture2D" uid="uid://br37i1qhdfn32" path="res://Assets/Sprites/Placeholders/ConveyerPLACEHOLDER.png" id="4_slx4t"]
+
+[sub_resource type="Curve2D" id="Curve2D_pxaw7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -450, -150, 0, 0, 0, 0, -450, -50, 0, 0, 0, 0, 450, -50, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 500, 100)
+}
+point_count = 5
+
+[node name="Conveyer" type="Node2D" node_paths=PackedStringArray("conveyerPath")]
+script = ExtResource("1_yvbmm")
+ConveyerSpeed = 0.1
+ConveyerAccel = 0.01
+ConveyerSpawnRate = 0.8
+conveyerPath = NodePath("Path2D")
+spawnableObjects = Array[Resource]([ExtResource("2_54b5u"), ExtResource("3_i53ou")])
+prefab = ExtResource("3_d64hd")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_pxaw7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_slx4t")
